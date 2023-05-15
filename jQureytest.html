@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+    <script>
+
+        // 선택자 : 액션을 발생시킨 트리거 / 이벤트리스너  예시 $("#gnb li")
+        // 이벤트 : 시점 / click, hover, focus, submit, ready, change
+        // 메서드 : 어떻게 해준다 / css, html. prepend, addClass, removeClass, toggleClass
+
+
+        $(document).ready(function () {
+            $(".btn").click(function () {
+                $("body").addClass("bg-yellow")
+            })
+
+            $("#popup button").click(function () {
+                $("body").removeClass("bg-yellow")
+            })
+
+            $(".action").click(function () {
+                $(".popup").css("display", "none")
+            })
+        })
+
+    </script>
+</head>
+
+
+<body>
+    <div class="btn"></div>
+</body>
+
+</html>

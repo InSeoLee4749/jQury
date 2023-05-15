@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리로 출력하기</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+
+    <!-- 동그라미에서 클릭하면 사라지기 -->
+    <!-- <script>
+        // $(document).ready(function () {
+        //     //$(".popup").click(function(){}) -> popup을 클릭해라 명령
+        //     $(".popup").click(function () {
+        //         //$(".popup").css("display", "none") //.css(스타일,값)
+        //         //위와 같은 내용 $(".popup").toggleClass("bgchang")  //toggleclass
+        //     })
+        // })
+    </script> -->
+
+    <!-- 프로젝트의 변수를 루트 선택자에 넣어 스타일을 간단화하였다 -->
+    <!-- 아래는 스타일 
+    :root {
+    --ncs-width: 500px
+    }
+
+    .bgchang {
+    background-color: yellow !important;
+    }
+
+    .popup {
+    width: var(--ncs-width);
+    height: var(--ncs-width);
+    background-color: black;
+    border-radius: 50%;
+    }
+
+    body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    } */ -->
+
+    <!-- 동그라미에서 클릭하면 네모,노랑으로 바꾸기 -->
+    <!-- <script>
+        $(document).ready(function () {
+            $(".popup").click(function () {
+                $(this).css("border-radius", 0)
+                $(this).css("background", "yellow")
+            })
+
+        })
+    </script> -->
+
+    <!-- 옆에 작은 팝업 버튼 누르기 // 
+    아래는 바디 부분
+    <body>
+    <div class="popup">
+        <button>닫기</button>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $(".popup button").click(function () {
+                //$(".popup").css("display", "none") -> 이것보단 아래꺼를 더 많이 사용 
+                $(".popup").hide()
+            })
+        })
+    </script>
+
+    <style>
+        :root {
+            --width-m: 300px;
+            --width-b: 500px;
+            --width-s: 100px;
+        }
+
+        .popup {
+            position: fixed;
+            width: var(--width-m);
+            height: var(--width-m);
+            border-radius: 50%;
+            background-color: black;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .popup button {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style> -->
+
+    <script>
+        $(document).ready(function () {
+            $(".popup button").eq(0).click(function () {
+                $("body").css("background", "red")
+            })
+            $(".popup button").eq(1).click(function () {
+                $("body").css("background", "yellow")
+            })
+            $(".popup button").eq(2).click(function () {
+                $("body").css("background", "green")
+            })
+        })
+    </script>
+
+
+</head>
+
+<body>
+    <div class="popup">
+        <button>빨강</button>
+        <button>노랑</button>
+        <button>초록</button>
+    </div>
+</body>
+
+</html>
